@@ -21,11 +21,9 @@ class Paddle(pygame.sprite.Sprite):
 	#moving up
 	def moveUp(self, pixels):
 		self.rect.y -= pixels
-		if self.rect.y < 0:
-			self.rect.y = 0
+		self.rect.y = max(self.rect.y, 0)
 
 	#moving down
 	def moveDown(self, pixels):
 		self.rect.y += pixels
-		if self.rect.y > 400:
-			self.rect.y = 400
+		self.rect.y = min(self.rect.y, 400)
